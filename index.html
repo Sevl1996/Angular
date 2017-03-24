@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="App">
+<head>
+	<title>AngularJS</title>
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+
+    <script src="app.js"></script>
+	<script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
+
+	<link href="style.css" rel="stylesheet" type="text/css"/>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet"; href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
+
+</head>
+
+<body >
+	<div ng-controller="tableController">
+
+		<table ng-table="usersTable" class="table table-striped" show-filter="true">
+		   <tr ng-repeat="user in $data">
+		       <td title="'Title'" sortable="'Title'" filter="{ 'Title': 'text' }">
+		           {{user.Title}}
+		       </td>
+		       <td title="'Address'" sortable="'Address'" filter="{ 'Address': 'text' }">
+		           {{user.Address}}
+		       </td>    
+		       <td title="'Type'">
+		           {{user.Type}}
+		       </td>    
+		       <td title="'Cost($)'">
+		           {{user.Cost}}
+		       </td>    
+		       <td title="'Square'" >
+		           {{user.Square}}
+		       </td>    
+		   </tr>
+		</table>
+
+    </div>
+
+</body>
+</html>

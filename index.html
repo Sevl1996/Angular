@@ -1,44 +1,49 @@
 <!doctype html>
-<html ng-app="App">
+<html>
 <head>
 	<title>AngularJS</title>
 
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-    <script src="app.js"></script>
-	<script src="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.js"></script>
-
-	<link href="style.css" rel="stylesheet" type="text/css"/>
+	<link rel="stylesheet" type="text/css" href="css/custom.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet"; href="https://unpkg.com/ng-table@2.0.2/bundles/ng-table.min.css">
 
 </head>
 
-<body >
-	<div ng-controller="tableController">
+<body ng-app="mainModule">
 
-		<table ng-table="usersTable" class="table table-striped" show-filter="true">
-		   <tr ng-repeat="user in $data">
-		       <td title="'Title'" sortable="'Title'" filter="{ 'Title': 'text' }">
-		           {{user.Title}}
-		       </td>
-		       <td title="'Address'" sortable="'Address'" filter="{ 'Address': 'text' }">
-		           {{user.Address}}
-		       </td>    
-		       <td title="'Type'">
-		           {{user.Type}}
-		       </td>    
-		       <td title="'Cost($)'">
-		           {{user.Cost}}
-		       </td>    
-		       <td title="'Square'" >
-		           {{user.Square}}
-		       </td>    
-		   </tr>
-		</table>
+	<div class="container-fluid">
+        <!-- Навигация -->
+        
+        <div class="navbar">
+          
+          <div class="navbar-inner">
+            
+            <div class="container">
 
+              <a class="brand" href="#/main">Main</a>
+              <a class="brand" href="#/auth">Authorization</a>
+
+            </div>
+          
+          </div>
+        
+        </div>
+      
+    <div ng-view>
     </div>
+  </div>
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
+<script src="js/app.js"></script>
+<script language="javascript"  src="libs/jquery-1.7.2.min.js"></script>
+<script language="javascript"  src="libs/bootstrap.min.js"></script>
+<script language="javascript"  src="libs/angular.min.js"></script>
+<script language="javascript"  src="partials/data.js"></script>
 
 </body>
 </html>

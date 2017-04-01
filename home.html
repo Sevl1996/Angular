@@ -1,0 +1,30 @@
+<div ng-controller="dataController">
+	<table ng-table="usersTable" class="table table-bordered table-hover " show-filter="true">
+		   <tr ng-repeat="user in $data" ng-class="user.rowCss" ng-click="select(user)">
+		       <td title="'Title'" sortable="'Title'" filter="{ 'Title': 'text' }">
+		           {{user.Title}}
+		       </td>
+		       <td title="'Address'" sortable="'Address'" filter="{ 'Address': 'text' }">
+		           {{user.Address}}
+		       </td>    
+		       <td title="'Type'">
+		           {{user.Type}}
+		       </td>    
+		       <td title="'Cost($)'">
+		           {{user.Cost}}
+		       </td>    
+		       <td title="'Square'" >
+		           {{user.Square}}
+		       </td>    
+		   </tr>
+		   <tfoot>
+		        <tr>
+		            <td colspan="{{data.columns.length + 1}}">
+		                <button ui-sref="addition" class="btn btn-small btn-success">Добавить</button>
+		                <a ui-sref="addition" class="btn btn-small btn-primary" ng-show="scotches.selected">Изменить</a>
+		                <a ui-sref="register" class="btn btn-small btn-danger"  ng-show="scotches.selected">Удалить</a>
+		            </td>
+		        </tr>   
+	    	</tfoot>
+	</table>
+</div>
